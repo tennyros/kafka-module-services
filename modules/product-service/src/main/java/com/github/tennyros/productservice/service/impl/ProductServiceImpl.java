@@ -1,8 +1,8 @@
-package com.github.tennyros.productmicroservice.service.impl;
+package com.github.tennyros.productservice.service.impl;
 
-import com.github.tennyros.productmicroservice.service.ProductService;
-import com.github.tennyros.productmicroservice.service.dto.CreateProductDto;
-import com.github.tennyros.productmicroservice.service.event.ProductCreatedEvent;
+import com.github.tennyros.eventmodels.event.ProductCreatedEvent;
+import com.github.tennyros.productservice.service.ProductService;
+import com.github.tennyros.productservice.service.dto.CreateProductDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -10,7 +10,6 @@ import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 @Slf4j

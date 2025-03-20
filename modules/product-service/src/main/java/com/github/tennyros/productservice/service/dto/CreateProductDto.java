@@ -1,4 +1,4 @@
-package com.github.tennyros.productmicroservice.service.dto;
+package com.github.tennyros.productservice.service.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

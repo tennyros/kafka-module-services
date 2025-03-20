@@ -1,4 +1,4 @@
-package com.github.tennyros.productmicroservice.controller.exception;
+package com.github.tennyros.productservice.controller.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

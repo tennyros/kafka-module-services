@@ -1,8 +1,8 @@
-package com.github.tennyros.productmicroservice.controller;
+package com.github.tennyros.productservice.controller;
 
-import com.github.tennyros.productmicroservice.controller.exception.ErrorMessage;
-import com.github.tennyros.productmicroservice.service.ProductService;
-import com.github.tennyros.productmicroservice.service.dto.CreateProductDto;
+import com.github.tennyros.productservice.controller.exception.ErrorMessage;
+import com.github.tennyros.productservice.service.ProductService;
+import com.github.tennyros.productservice.service.dto.CreateProductDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
-import java.util.concurrent.ExecutionException;
 
 @Slf4j
 @RestController
