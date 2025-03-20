@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: product-microservice
+    name: product-service
   kafka:
     producer:
       properties:

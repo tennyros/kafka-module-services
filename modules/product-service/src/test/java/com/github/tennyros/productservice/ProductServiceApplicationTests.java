@@ -1,10 +1,10 @@
-package com.github.tennyros.productmicroservice;
+package com.github.tennyros.productservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ProductMicroserviceApplicationTests {
+class ProductServiceApplicationTests {
 
     @Test
     void contextLoads() {
