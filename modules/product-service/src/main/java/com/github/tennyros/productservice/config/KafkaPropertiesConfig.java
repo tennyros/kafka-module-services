@@ -1,4 +1,4 @@
-package com.github.tennyros.productmicroservice.config;
+package com.github.tennyros.productservice.config;
 
 import lombok.Getter;
 import lombok.Setter;

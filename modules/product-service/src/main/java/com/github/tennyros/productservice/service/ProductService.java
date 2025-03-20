@@ -1,6 +1,6 @@
-package com.github.tennyros.productmicroservice.service;
+package com.github.tennyros.productservice.service;
 
-import com.github.tennyros.productmicroservice.service.dto.CreateProductDto;
+import com.github.tennyros.productservice.service.dto.CreateProductDto;
 
 import java.util.concurrent.ExecutionException;
 

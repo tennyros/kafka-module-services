@@ -1,4 +1,4 @@
-package com.github.tennyros.productmicroservice.service.event;
+package com.github.tennyros.eventmodels.event;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

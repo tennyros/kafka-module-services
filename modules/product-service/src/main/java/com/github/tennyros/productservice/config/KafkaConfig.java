@@ -1,6 +1,6 @@
-package com.github.tennyros.productmicroservice.config;
+package com.github.tennyros.productservice.config;
 
-import com.github.tennyros.productmicroservice.service.event.ProductCreatedEvent;
+import com.github.tennyros.eventmodels.event.ProductCreatedEvent;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.context.annotation.Bean;

@@ -19,6 +19,8 @@
 
     <modules>
         <module>modules/product-service</module>
+        <module>modules/email-notification-service</module>
+        <module>modules/event-models</module>
     </modules>
 
     <url/>
