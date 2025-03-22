@@ -5,6 +5,7 @@ import com.github.tennyros.productservice.service.ProductService;
 import com.github.tennyros.productservice.service.dto.CreateProductDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
@@ -31,28 +32,20 @@ public class ProductServiceImpl implements ProductService {
                 .quantity(createProductDto.getQuantity())
                 .build();
 
+        ProducerRecord<String, ProductCreatedEvent> productCreatedRecord = new ProducerRecord<>(
+                "product-created-events-topic",
+                productId,
+                productCreatedEvent
+        );
+
+        productCreatedRecord.headers().add("messageId", "message-id".getBytes());
+
         SendResult<String, ProductCreatedEvent> result = kafkaTemplate
-                .send("product-created-events-topic", productId, productCreatedEvent).get();
+                .send(productCreatedRecord).get();
 
         log.info("Topic: {}", result.getRecordMetadata().topic());
         log.info("Partition: {}", result.getRecordMetadata().partition());
         log.info("Offset: {}", result.getRecordMetadata().offset());
-
-/*        // for async realization
-        CompletableFuture<SendResult<String, ProductCreatedEvent>> future = kafkaTemplate
-                .send("product-created-events-topic", productId, productCreatedEvent);
-
-        future.whenComplete((result, exception) -> {
-            if (exception != null) {
-                log.error("Failed to send message: {}", exception.getMessage());
-            } else {
-                log.info("Message sent successfully: {}", result.getRecordMetadata());
-            }
-        });
-
-        */
-
-//        future.join();
 
         log.info("Return: {}", productId);
 

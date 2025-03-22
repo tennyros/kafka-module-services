@@ -4,6 +4,18 @@ server:
 spring:
   application:
     name: email-notification-service
+
+  datasource:
+    username: test
+    password: test
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+
   kafka:
     bootstrap-servers: localhost:9092,localhost:9094
     consumer:
