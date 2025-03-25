@@ -5,14 +5,21 @@ spring:
   application:
     name: product-service
   kafka:
+    bootstrap-servers: localhost:9092,localhost:9094
     producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: all
       properties:
-        bootstrap.servers: localhost:9092,localhost:9094
-        key.serializer: org.apache.kafka.common.serialization.StringSerializer
-        value.serializer: org.springframework.kafka.support.serializer.JsonSerializer
-        acks: all
         enable.idempotence: true
         max.in.flight.requests.per.connection: 5
         delivery.timeout.ms: 20000
         linger.ms: 0
         request.timeout.ms: 10000
+
+app:
+  kafka:
+    topics:
+      product-created: product-created-events-topic
+    partitions: 3
+    replicas: 3
