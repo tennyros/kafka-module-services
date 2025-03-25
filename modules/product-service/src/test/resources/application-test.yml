@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: product-service-test
+
+  kafka:
+    consumer:
+      properties:
+        group.id: product-created-events
+        spring.json.trusted.packages: com.github.tennyros.eventmodels.event
+        auto.offset.reset: earliest
+
+product:
+  kafka:
+    events:
+      topic-name: product-created-events-topic
